@@ -4,6 +4,8 @@ Codecamp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root :to => 'high_voltage/pages#show', :id => 'home'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
