@@ -7,5 +7,4 @@ end
 
 Then(/^I should see that there are no sessions$/) do
   page.should have_content("No sessions")
-  page.should have_content("Submit a session")
 end
