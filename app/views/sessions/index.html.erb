@@ -1,1 +1,11 @@
+
+<% if @sessions.any? %>
+  <ul>
+    <% @sessions.each do |session| %>
+    <li class="session"><%= session.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+<%= @sessions %>
 No sessions
+<% end %>
