@@ -1,0 +1,9 @@
+<% if @speakers.any? %>
+  <ul>
+    <% @speakers.each do |session| %>
+    <li class="session"><%= session.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+No speakers
+<% end %>
