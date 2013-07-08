@@ -22,9 +22,9 @@ When(/^I go to the speakers display page$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
-  page.should have_content(text)
+  page.has_content?(text)
 end
 
 Then(/^I should not see "(.*?)"$/) do |text|
-  page.should have_no_content(text)
+  page.has_content?(text) == false
 end
