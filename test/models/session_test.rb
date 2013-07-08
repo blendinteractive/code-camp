@@ -5,6 +5,6 @@ class SessionTest < ActiveSupport::TestCase
     session = Session.new :speaker => "Jackson Harms", :abstract => "Testing with selenium"
     refute session.save, "Saved the session without a title"
     refute session.valid?
-    assert session.errors.on(:title).any?
+    assert session.errors.get(:title).any?
   end
 end
