@@ -10,7 +10,9 @@ Given(/^there are upcoming sessions$/) do
 end
 
 Given(/^there are upcoming speakers$/) do
-  pending # express the regexp above with the code you wish you had
+  Speaker.create! :firstname => "Jackson", :lastname => "Harms", :email => "jackson@blendinteractive.com", :display => true
+  Speaker.create! :firstname => "Tyler", :lastname => "Murtha", :email => "tyler.harms@gmail.com", :display => true
+  Speaker.create! :firstname => "Seth", :lastname => "Larson", :email => "seth.larson@gmail.com", :display => false
 end
 
 When(/^I go to the sessions display page$/) do
