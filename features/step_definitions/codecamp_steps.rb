@@ -22,9 +22,13 @@ When(/^I go to the speakers display page$/) do
 end
 
 Then(/^I should see "(.*?)"$/) do |text|
-  page.has_content?(text)
+  assert page.has_content?(text)
+end
+
+Then(/^I should see "(.*?)" items$/) do |text|
+  assert page.has_css?("."+text) || page.has_css?("#"+text)
 end
 
 Then(/^I should not see "(.*?)"$/) do |text|
-  page.has_content?(text) == false
+  assert page.has_content?(text) == false
 end

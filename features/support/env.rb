@@ -51,6 +51,21 @@ end
 #     DatabaseCleaner.strategy = :transaction
 #   end
 #
+begin
+  require 'database_cleaner'
+  require 'database_cleaner/cucumber'
+  DatabaseCleaner.strategy = :truncation
+rescue NameError
+  raise "You need to add database_cleaner to your Gemfile (in the :test group)"
+end
+
+Before do
+  DatabaseCleaner.start
+end
+
+After do |scenario|
+  DatabaseCleaner.clean
+end
 
 # Possible values are :truncation and :transaction
 # The :transaction strategy is faster, but might give you threading problems.
