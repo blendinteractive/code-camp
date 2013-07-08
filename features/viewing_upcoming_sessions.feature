@@ -9,3 +9,4 @@ Feature: Viewing the upcoming sessions
     Given there are upcoming sessions
     When I go to the sessions display page
     Then I should see sessions
+    Then I should not see "No sessions"

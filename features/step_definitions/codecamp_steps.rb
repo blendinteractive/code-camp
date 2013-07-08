@@ -16,7 +16,9 @@ Then(/^I should see "(.*?)"$/) do |text|
 end
 
 Then(/^I should see sessions$/) do
-  puts "************************\n #{@sessions}\n********************\n"
-  puts page.html
   page.should have_css(".session")
+end
+
+Then(/^I should not see "(.*?)"$/) do |text|
+  page.should have_no_content(text)
 end
