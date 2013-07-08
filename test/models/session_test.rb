@@ -7,4 +7,10 @@ class SessionTest < ActiveSupport::TestCase
     refute session.valid?
     assert session.errors.get(:title).any?
   end
+
+  test "sessions should require a speaker" do
+    session = Session.new :title => "How to train your dragon", :abstract => "Testing with selenium"
+    refute session.save, "Saved the session without a speaker"
+    refute session.valid?
+  end
 end
