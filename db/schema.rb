@@ -11,14 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130708222048) do
+ActiveRecord::Schema.define(version: 20130709044149) do
 
   create_table "sessions", force: true do |t|
-    t.string   "speaker"
     t.string   "title"
     t.text     "abstract"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "speaker_id"
   end
 
   create_table "speakers", force: true do |t|
