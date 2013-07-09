@@ -1,5 +1,5 @@
 class SpeakersController < ApplicationController
   def index
-    @speakers = []
+    @speakers = Speaker.all
   end
 end

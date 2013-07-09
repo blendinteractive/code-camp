@@ -1,7 +1,7 @@
 <% if @speakers.any? %>
   <ul>
-    <% @speakers.each do |session| %>
-    <li class="session"><%= session.title %></li>
+    <% @speakers.each do |speaker| %>
+    <li class="speaker"><%= speaker.firstname + " " + speaker.lastname %></li>
     <% end %>
   </ul>
 <% else %>
