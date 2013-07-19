@@ -7,6 +7,7 @@ Codecamp::Application.routes.draw do
   root :to => 'high_voltage/pages#show', :id => 'home'
   resources :sessions
   resources :speakers
+  get 'browser' => 'browser#index'
 
 
   # Example of regular route:
