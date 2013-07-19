@@ -8,15 +8,20 @@ class BrowserController < ApplicationController
     sse = Reloader::SSE.new(response.stream)
 
     begin
-      loop do 
-        sse.write({:time => Time.now })
-        sleep 1
+      directories = [
+        File.join(Rails.root, 'app', 'assets'),
+        File.join(Rails.root, 'app', 'views'),
+      ]
+      fsevent = FSEvent.new
+
+      fsevent.watch(directories) do |dirs|
+        sse.write({ :dirs => dirs }, :event => 'refresh')
       end
+      fsevent.run  
     rescue IOError
       # Disconnects cause an IOError
     ensure
       sse.close
     end
   end
-
 end
