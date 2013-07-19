@@ -2,9 +2,10 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'
+gem 'newrelic_rpm'
 
 gem 'high_voltage'
-
+gem 'pry', group: ['development','test']
 group :test do
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
