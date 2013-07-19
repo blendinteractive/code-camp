@@ -4,6 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.0'
 gem 'newrelic_rpm'
 
+gem 'rb-fsevent'
 gem 'high_voltage'
 gem 'pry', group: ['development','test']
 group :test do
