@@ -12,7 +12,7 @@ Codecamp::Application.configure do
   # Show full error reports and disable caching.
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
-
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
@@ -28,4 +28,5 @@ Codecamp::Application.configure do
   config.assets.debug = true
   config.preload_frameworks = true
   config.allow_concurrency = true
+
 end
