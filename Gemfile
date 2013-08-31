@@ -8,6 +8,7 @@ gem 'rb-fsevent'
 gem 'high_voltage'
 gem 'pry', group: ['development','test']
 group :test do
+	gem 'rspec-rails'
   gem 'database_cleaner'
   gem 'cucumber-rails', :require => false
 end
@@ -47,8 +48,8 @@ end
 # Use puma as the app server
 gem 'puma'
 
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
+gem 'responders', github: 'plataformatec/responders'
+gem 'ransack'
+gem 'activeadmin',         github: 'gregbell/active_admin', branch: 'rails4'
+gem 'inherited_resources', github: 'josevalim/inherited_resources'
+gem 'formtastic',          github: 'justinfrench/formtastic'
