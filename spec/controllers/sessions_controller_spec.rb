@@ -42,7 +42,6 @@ describe SessionsController do
       expect(assigns(:sessions)).to match_array([session1, session2])
     end
   end
-
   describe "GET #show" do
     it "responds successfully with an HTTP 200 status code" do
       get :show, :id => session.id

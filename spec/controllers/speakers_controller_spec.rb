@@ -37,4 +37,15 @@ describe SpeakersController do
       expect(assigns(:speakers)).to match_array([speaker1, speaker2])
     end
   end
+  describe "GET #show" do
+    it "responds successfully with an HTTP 200 status code" do
+      get :show, :id => speaker.id
+      expect(response).to be_success
+      expect(response.status).to eq(200)
+    end
+    it "renders the show template" do
+      get :show, :id => speaker.id
+      expect(response).to render_template("show")
+    end
+  end
 end
