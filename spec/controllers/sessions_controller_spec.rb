@@ -52,5 +52,10 @@ describe SessionsController do
       get :show, :id => session.id
       expect(response).to render_template("show")
     end
+    it "loads the session into @session" do
+      get :show, :id => session.id
+
+      expect(assigns(:session)).to eql(session)
+    end
   end
 end

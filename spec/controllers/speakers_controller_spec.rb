@@ -47,5 +47,10 @@ describe SpeakersController do
       get :show, :id => speaker.id
       expect(response).to render_template("show")
     end
+    it "loads the speaker into @speaker" do
+      get :show, :id => speaker.id
+
+      expect(assigns(:speaker)).to eql(speaker)
+    end
   end
 end
