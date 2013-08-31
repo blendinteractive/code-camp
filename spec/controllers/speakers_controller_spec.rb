@@ -1,6 +1,22 @@
 require "spec_helper"
 
 describe SpeakersController do
+  let(:speaker) {Speaker.create(firstname: "Seth", lastname: "Larson", email: "tyler@blendisimo.com")}
+  describe "speaker routes" do
+    it "routes get /speakers to speakers#index" do
+      expect(:get => "/speakers").to route_to(
+        :controller => "speakers",
+        :action => "index",
+      )
+    end
+    it "routes get /speakers/:id to speakers#show" do
+      expect(:get => "/speakers/" + speaker.id.to_s).to route_to(
+        :controller => "speakers",
+        :action => "show",
+        :id => speaker.id.to_s
+      )
+    end
+  end
   describe "GET #index" do
     it "responds successfully with an HTTP 200 status code" do
       get :index

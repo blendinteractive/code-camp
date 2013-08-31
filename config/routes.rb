@@ -10,7 +10,7 @@ Codecamp::Application.routes.draw do
 
   #Speakers
   get '/speakers', to: 'speakers#index'
-  #get '/speakers/:id', to: 'speakers#show', as: 'speaker'
+  get '/speakers/:id', to: 'speakers#show', as: 'speaker'
 
   #Sessions
   get '/sessions', to: 'sessions#index'
